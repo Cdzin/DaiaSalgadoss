@@ -1,464 +1,1251 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daia Salgados • Orlândia/SP</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0F0E17; color: #FFFFFE; }
-        .font-serif-title { font-family: 'Playfair Display', serif; }
-        .hidden-section { display: none !important; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-thumb { background: #373343; border-radius: 9999px; }
-        .glass-header { background: rgba(15, 14, 23, 0.85); backdrop-filter: blur(16px); }
-        .card-elegant { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-        .card-elegant:hover { border-color: rgba(230, 57, 70, 0.4); transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5); }
-        .gold-title { font-family: 'Playfair Display', serif; color: #D4AF37; letter-spacing: 0.05em; }
-        .gold-btn { background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%); color: #111; font-weight: 700; }
-        .gold-btn:hover { opacity: 0.95; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Daia Salgados • Artesanais e fritos na hora • Orlândia/SP"
+  >
+
+  <meta
+    name="referrer"
+    content="strict-origin-when-cross-origin"
+  >
+
+  <title>Daia Salgados • Orlândia/SP</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0F0E17;
+      color: #FFFFFE;
+    }
+
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #373343;
+      border-radius: 9999px;
+    }
+
+    .glass-header {
+      background: rgba(15, 14, 23, .88);
+      backdrop-filter: blur(16px);
+    }
+
+    .card-elegant {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .08);
+      transition: .3s;
+    }
+
+    .card-elegant:hover {
+      border-color: rgba(230, 57, 70, .4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .5);
+    }
+
+    .gold-title {
+      font-family: 'Playfair Display', serif;
+      color: #D4AF37;
+      letter-spacing: .05em;
+    }
+
+    .focus-ring:focus {
+      outline: 2px solid #D4AF37;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
+
 <body class="min-h-screen flex flex-col selection:bg-[#E63946] selection:text-white">
 
-    <!-- Topbar Elegante -->
-    <header class="glass-header border-b border-white/10 sticky top-0 z-40">
-        <div class="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between">
-            <div class="flex items-center space-x-3.5">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#E63946] to-[#D62828] flex items-center justify-center font-black text-white text-base shadow-lg shadow-[#E63946]/20">
-                    DS
-                </div>
-                <div>
-                    <h1 class="font-extrabold text-base tracking-tight text-white flex items-center gap-2">
-                        DAIA SALGADOS <span class="text-[10px] bg-[#E63946]/20 text-[#FF85A1] border border-[#E63946]/30 px-2 py-0.5 rounded-full font-bold">Orlândia/SP</span>
-                    </h1>
-                    <span class="text-xs text-[#A7A9BE]">Artesanais & Fritos na hora</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-2.5">
-                <a href="https://wa.me/5516992251672" target="_blank" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 shadow-lg shadow-emerald-900/20 transition">
-                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-                </a>
-                <button onclick="toggleAdminModal()" class="text-xs bg-white/5 hover:bg-white/10 text-[#A7A9BE] hover:text-white border border-white/10 px-3.5 py-2 rounded-xl font-semibold transition">
-                    <i class="fa-solid fa-lock text-[10px] mr-1"></i> Painel
-                </button>
-            </div>
+  <!-- HEADER -->
+  <header class="glass-header border-b border-white/10 sticky top-0 z-40">
+
+    <div
+      class="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between gap-3"
+    >
+
+      <div class="flex items-center space-x-3.5 min-w-0">
+
+        <div
+          class="w-11 h-11 shrink-0 rounded-2xl bg-gradient-to-br from-[#E63946] to-[#D62828] flex items-center justify-center font-black text-white text-base shadow-lg"
+        >
+          DS
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Esquerda / Cardápio (2 colunas) -->
-        <section class="md:col-span-2 space-y-6">
-            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1E1B2E] via-[#2A2338] to-[#1E1B2E] border border-white/10 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
-                <div class="space-y-1 relative z-10">
-                    <span class="text-[10px] uppercase tracking-widest text-[#FF85A1] font-bold">Qualidade Premium</span>
-                    <h2 class="font-serif-title text-xl text-white">Salgadinhos crocantes e quentinhos</h2>
-                    <p class="text-xs text-[#A7A9BE]">Pronta entrega, fritos na hora com padrão artesanal para sua festa.</p>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-[#E63946]/15 border border-[#E63946]/30 flex items-center justify-center text-[#E63946] shrink-0">
-                    <i class="fa-solid fa-utensils text-lg"></i>
-                </div>
-            </div>
+        <div class="min-w-0">
 
-            <!-- Filtros Refinados -->
-            <div class="flex items-center gap-2">
-                <button onclick="filterCategory('todos')" id="btn-cat-todos" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#E63946] text-white shadow-md shadow-[#E63946]/25 transition">Todos</button>
-                <button onclick="filterCategory('Fritos')" id="btn-cat-Fritos" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10 hover:bg-white/10 hover:text-white transition">Fritos por Porção</button>
-                <button onclick="filterCategory('Kits')" id="btn-cat-Kits" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10 hover:bg-white/10 hover:text-white transition">Kits Festa</button>
-            </div>
+          <h1
+            class="font-extrabold text-base tracking-tight text-white flex items-center gap-2 flex-wrap"
+          >
+            DAIA SALGADOS
 
-            <!-- Lista de Produtos -->
-            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
-        </section>
+            <span
+              class="text-[10px] bg-[#E63946]/20 text-[#FF85A1] border border-[#E63946]/30 px-2 py-0.5 rounded-full font-bold"
+            >
+              Orlândia/SP
+            </span>
+          </h1>
 
-        <!-- Direita / Resumo do Pedido -->
-        <aside class="space-y-4">
-            <div class="card-elegant rounded-2xl p-5 sticky top-24 space-y-4 backdrop-blur-md">
-                <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                    <h3 class="font-bold text-sm text-white flex items-center gap-2">
-                        <i class="fa-solid fa-bag-shopping text-[#E63946]"></i> Seu Pedido
-                    </h3>
-                    <span id="cart-item-count" class="text-xs text-[#A7A9BE] bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">0 itens</span>
-                </div>
-                
-                <div id="cart-items" class="space-y-2.5 max-h-52 overflow-y-auto text-xs pr-1">
-                    <p class="text-[#A7A9BE]/70 text-center py-8">Nenhum salgado selecionado ainda</p>
-                </div>
+          <span class="text-xs text-[#A7A9BE]">
+            Artesanais & Fritos na hora
+          </span>
 
-                <div class="border-t border-white/10 pt-3 flex justify-between items-center">
-                    <span class="text-xs text-[#A7A9BE]">Total do pedido:</span>
-                    <span id="cart-total" class="font-extrabold text-base text-[#F4A261]">R$ 0,00</span>
-                </div>
-
-                <form id="checkout-form" onsubmit="finalizeOrder(event)" class="space-y-2.5 pt-3 border-t border-white/10 text-xs">
-                    <input type="text" id="cust-name" required placeholder="Seu Nome completo" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60 focus:outline-none focus:border-[#E63946] transition">
-                    <input type="text" id="cust-address" required placeholder="Endereço (Bairro / Rua - Orlândia)" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60 focus:outline-none focus:border-[#E63946] transition">
-                    
-                    <select id="cust-payment" onchange="handlePaymentChange()" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white font-medium focus:outline-none focus:border-[#E63946]">
-                        <option value="Pix">Pix (Aprovação rápida)</option>
-                        <option value="Cartão">Cartão (Débito / Crédito)</option>
-                        <option value="Dinheiro">Dinheiro</option>
-                    </select>
-
-                    <div id="cash-info-box" class="hidden-section">
-                        <input type="text" id="cust-change" placeholder="Troco para quanto?" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60">
-                    </div>
-
-                    <button type="submit" class="w-full bg-gradient-to-r from-[#E63946] to-[#D62828] hover:opacity-95 text-white font-extrabold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-[#E63946]/25 mt-2">
-                        <i class="fa-brands fa-whatsapp text-sm"></i> ENVIAR PEDIDO AGORA
-                    </button>
-                </form>
-            </div>
-        </aside>
-    </main>
-
-    <!-- Footer Discreto -->
-    <footer class="border-t border-white/10 py-6 text-center text-xs text-[#A7A9BE]/70">
-        <p>Daia Salgados • Orlândia/SP • Atendimento WhatsApp: (16) 99225-1672</p>
-    </footer>
-
-    <!-- Modal Admin Estilo "ADICIONAR NOVA MÍDIA" (Senha 1234) -->
-    <div id="admin-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden-section flex items-center justify-center p-4">
-        <div class="bg-[#121118] border border-white/10 rounded-2xl max-w-md w-full overflow-hidden flex flex-col shadow-2xl relative">
-            
-            <!-- Botão fechar topo direito -->
-            <button onclick="toggleAdminModal()" class="absolute top-4 right-4 text-[#A7A9BE] hover:text-white transition z-10 text-base"><i class="fa-solid fa-xmark"></i></button>
-
-            <!-- Login View -->
-            <div id="admin-login-view" class="p-8 text-center space-y-4">
-                <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto text-[#A7A9BE]">
-                    <i class="fa-solid fa-lock text-base"></i>
-                </div>
-                <h4 class="font-bold text-sm text-white">Acesso Restrito do Painel</h4>
-                <input type="password" id="admin-pass-input" placeholder="Senha (1234)" class="w-full text-center tracking-widest text-sm bg-[#181622] border border-white/10 rounded-xl py-3 text-white focus:outline-none focus:border-[#D4AF37]">
-                <button onclick="authAdmin()" class="w-full gold-btn py-3 rounded-xl text-xs">Entrar no Painel</button>
-            </div>
-
-            <!-- Dashboard / Gerenciador View -->
-            <div id="admin-dashboard-view" class="hidden-section flex-grow overflow-y-auto p-6 space-y-6 max-h-[90vh] text-xs">
-                
-                <!-- Abas internas -->
-                <div class="flex gap-2 border-b border-white/10 pb-3">
-                    <button onclick="switchAdmTab('add')" id="adm-tab-btn-add" class="px-3 py-1.5 rounded-lg gold-btn text-xs">Adicionar Salgado</button>
-                    <button onclick="switchAdmTab('pedidos')" id="adm-tab-btn-pedidos" class="px-3 py-1.5 rounded-lg bg-white/5 text-[#A7A9BE] hover:text-white">Pedidos (<span id="adm-count-badge">0</span>)</button>
-                </div>
-
-                <!-- Aba Adicionar (igual ao print com estilo luxo) -->
-                <div id="adm-tab-add" class="space-y-4">
-                    <div class="text-center space-y-1 pb-2">
-                        <h3 class="gold-title text-base font-bold uppercase tracking-wider">ADICIONAR NOVO SALGADO</h3>
-                        <div class="w-16 h-[1px] bg-[#D4AF37] mx-auto opacity-60"></div>
-                    </div>
-
-                    <form onsubmit="addNewProduct(event)" class="space-y-4">
-                        <div class="space-y-1.5">
-                            <label class="text-[11px] font-semibold text-[#A7A9BE] block">Título do Salgado</label>
-                            <input type="text" id="new-prod-name" required placeholder="Ex: Coxinha Crocante / Kit 50un" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-3 text-white text-xs focus:outline-none focus:border-[#D4AF37]">
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="space-y-1.5">
-                                <label class="text-[11px] font-semibold text-[#A7A9BE] block">Preço (R$)</label>
-                                <input type="number" step="0.01" id="new-prod-price" required placeholder="Ex: 20.00" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-3 text-white text-xs focus:outline-none focus:border-[#D4AF37]">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="text-[11px] font-semibold text-[#A7A9BE] block">Categoria</label>
-                                <select id="new-prod-cat" class="w-full bg-[#181622] border border-white/10 rounded-xl px-3 py-3 text-white text-xs focus:outline-none focus:border-[#D4AF37]">
-                                    <option value="Fritos">Fritos por Porção</option>
-                                    <option value="Kits">Kits Festa</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-[11px] font-semibold text-[#A7A9BE] block">Escolher da Galeria (Foto do Salgado)</label>
-                            <label class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-3 text-[#A7A9BE] flex items-center justify-between cursor-pointer hover:border-[#D4AF37] transition text-xs">
-                                <span id="file-chosen-text" class="truncate max-w-[200px]">Nenhum arquivo escolhido</span>
-                                <span class="bg-white/10 text-white px-3 py-1.5 rounded-lg text-[11px] font-bold">Escolher Arquivo</span>
-                                <input type="file" id="new-prod-file" accept="image/*" class="hidden" onchange="handleFileSelect(this)">
-                            </label>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-[11px] font-semibold text-[#A7A9BE] block">Descrição curta</label>
-                            <textarea id="new-prod-desc" placeholder="Recheio, crocância..." class="w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white text-xs h-16 focus:outline-none focus:border-[#D4AF37]"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full gold-btn py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg">Carregar e Salvar</button>
-                    </form>
-
-                    <!-- Lista rápida de exclusão/gerenciamento -->
-                    <div class="border-t border-white/10 pt-4 space-y-2">
-                        <span class="font-bold text-white text-xs block">Salgados Cadastrados no Cardápio</span>
-                        <div id="adm-products-manage-list" class="space-y-2 max-h-36 overflow-y-auto pr-1"></div>
-                    </div>
-
-                    <button onclick="logoutAdmin()" class="w-full bg-white/5 hover:bg-white/10 text-[#A7A9BE] hover:text-white py-3 rounded-xl text-xs transition border border-white/10">Sair do Admin</button>
-                </div>
-
-                <!-- Aba Pedidos -->
-                <div id="adm-tab-pedidos" class="hidden-section space-y-4">
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
-                            <span class="text-[#A7A9BE] block text-[10px]">Total de Pedidos</span>
-                            <strong id="adm-total-orders" class="text-white text-lg font-extrabold mt-0.5 block">0</strong>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 p-3 rounded-xl">
-                            <span class="text-[#A7A9BE] block text-[10px]">Faturamento</span>
-                            <strong id="adm-total-revenue" class="text-[#2A9D8F] text-lg font-extrabold mt-0.5 block">R$ 0,00</strong>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="font-bold text-white text-xs">Histórico Recente</span>
-                        <button onclick="clearAllOrders()" class="text-red-400 hover:text-red-300 font-semibold text-[11px]"><i class="fa-solid fa-trash mr-1"></i> Limpar</button>
-                    </div>
-                    <div id="adm-orders-list" class="space-y-2.5 max-h-60 overflow-y-auto"></div>
-                </div>
-
-            </div>
         </div>
+
+      </div>
+
+      <a
+        href="https://wa.me/5516992251672"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 shadow-lg transition"
+      >
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        WhatsApp
+      </a>
+
     </div>
 
-    <script>
-        const defaultProducts = [
-            { id: 1, name: 'Coxinhas Fresquinhas (Porção 10un)', desc: 'Massa leve dourada crocante por fora e frango temperado.', price: 20.00, cat: 'Fritos', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=85' },
-            { id: 2, name: 'Kibes Crocantes (Porção 10un)', desc: 'Carne moída selecionada frita no ponto ideal de crocância.', price: 20.00, cat: 'Fritos', image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=85' },
-            { id: 3, name: 'Salsicha Empanada e Sortidos (Porção 10un)', desc: 'Deliciosos espetinhos e salsichas empanadas artesanais.', price: 18.00, cat: 'Fritos', image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=700&q=85' },
-            { id: 4, name: 'Kit Festa 50 Salgados Sortidos', desc: 'Bandeja sortida ideal para pequenos encontros e aniversários.', price: 85.00, cat: 'Kits', image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=85' },
-            { id: 5, name: 'Kit Festa 100 Salgados Sortidos', desc: 'Mix completo recém-frito com coxinhas, quibes e risoles da casa.', price: 160.00, cat: 'Kits', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=85' }
-        ];
+  </header>
 
-        let products = JSON.parse(localStorage.getItem('daiasalgados_products') || JSON.stringify(defaultProducts));
-        let cart = [];
-        let orders = JSON.parse(localStorage.getItem('daiasalgados_orders') || '[]');
-        let activeCategory = 'todos';
-        let tempBase64Image = '';
 
-        function saveProducts() {
-            localStorage.setItem('daiasalgados_products', JSON.stringify(products));
-            renderProducts();
-            renderAdminProductsList();
-        }
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main
+    class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full grid grid-cols-1 md:grid-cols-3 gap-8"
+  >
 
-        function handleFileSelect(input) {
-            const file = input.files[0];
-            if (file) {
-                document.getElementById('file-chosen-text').innerText = file.name;
-                const reader = new FileReader();
-                reader.onload = function(e) { tempBase64Image = e.target.result; };
-                reader.readAsDataURL(file);
-            }
-        }
+    <!-- PRODUTOS -->
+    <section class="md:col-span-2 space-y-6">
 
-        function filterCategory(cat) {
-            activeCategory = cat;
-            ['todos', 'Fritos', 'Kits'].forEach(c => {
-                const btn = document.getElementById(`btn-cat-${c}`);
-                if (btn) {
-                    btn.className = c === cat 
-                        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#E63946] text-white shadow-md shadow-[#E63946]/25 transition' 
-                        : 'px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10 hover:bg-white/10 hover:text-white transition';
-                }
-            });
-            renderProducts();
-        }
+      <!-- BANNER -->
+      <div
+        class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1E1B2E] via-[#2A2338] to-[#1E1B2E] border border-white/10 p-6 shadow-xl"
+      >
 
-        function renderProducts() {
-            const container = document.getElementById('product-list');
-            const filtered = activeCategory === 'todos' ? products : products.filter(p => p.cat === activeCategory);
-            container.innerHTML = filtered.map(p => `
-                <div class="card-elegant rounded-2xl overflow-hidden flex flex-col justify-between group">
-                    <div>
-                        <div class="h-44 w-full overflow-hidden bg-[#181622] relative">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-md text-[#FF85A1] text-[10px] px-2.5 py-1 rounded-full font-bold border border-white/15">${p.cat}</span>
-                        </div>
-                        <div class="p-4 space-y-1.5">
-                            <h4 class="font-bold text-white text-xs leading-snug">${p.name}</h4>
-                            <p class="text-[11px] text-[#A7A9BE] leading-relaxed line-clamp-2">${p.desc}</p>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0 flex items-center justify-between">
-                        <span class="text-[#F4A261] font-extrabold text-xs">R$ ${Number(p.price).toFixed(2).replace('.', ',')}</span>
-                        <button onclick="addToCart(${p.id})" class="bg-white/10 hover:bg-[#E63946] text-white hover:text-white px-3 py-1.5 rounded-xl font-bold text-xs transition flex items-center gap-1.5 border border-white/10">
-                            <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
+        <div class="relative z-10">
 
-        function addToCart(id) {
-            const prod = products.find(p => p.id === id);
-            const found = cart.find(item => item.id === id);
-            if (found) found.qty++;
-            else cart.push({ ...prod, qty: 1 });
-            renderCart();
-        }
+          <p
+            class="text-[#FF85A1] text-[11px] font-bold uppercase tracking-[.18em]"
+          >
+            Cardápio digital
+          </p>
 
-        function renderCart() {
-            const container = document.getElementById('cart-items');
-            if (cart.length === 0) {
-                container.innerHTML = `<p class="text-[#A7A9BE]/70 text-center py-8">Nenhum salgado selecionado ainda</p>`;
-            } else {
-                container.innerHTML = cart.map(i => `
-                    <div class="flex justify-between items-center py-2 text-xs border-b border-white/5">
-                        <span class="text-white">${i.qty}x <span class="text-[#A7A9BE]">${i.name}</span></span>
-                        <div class="flex items-center gap-3">
-                            <span class="font-bold text-[#F4A261]">R$ ${(i.price * i.qty).toFixed(2).replace('.', ',')}</span>
-                            <button onclick="removeFromCart(${i.id})" class="text-red-400/80 hover:text-red-400 transition"><i class="fa-solid fa-trash-can text-xs"></i></button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            const total = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
-            const totalItems = cart.reduce((acc, i) => acc + i.qty, 0);
-            document.getElementById('cart-total').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-            document.getElementById('cart-item-count').innerText = `${totalItems} itens`;
-        }
+          <h2
+            class="font-serif-title text-3xl sm:text-4xl font-bold mt-1"
+          >
+            Salgados feitos com carinho.
+          </h2>
 
-        function removeFromCart(id) {
-            cart = cart.filter(i => i.id !== id);
-            renderCart();
-        }
+          <p class="text-[#A7A9BE] text-sm mt-2 max-w-xl">
+            Escolha seus favoritos, confira o carrinho e envie o pedido
+            diretamente pelo WhatsApp.
+          </p>
 
-        function handlePaymentChange() {
-            const method = document.getElementById('cust-payment').value;
-            document.getElementById('cash-info-box').style.display = method === 'Dinheiro' ? 'block' : 'none';
-        }
+        </div>
 
-        function finalizeOrder(e) {
-            e.preventDefault();
-            if (cart.length === 0) return alert('Seu carrinho está vazio!');
-            const total = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
-            const method = document.getElementById('cust-payment').value;
-            const changeVal = document.getElementById('cust-change').value;
-            const name = document.getElementById('cust-name').value;
-            const address = document.getElementById('cust-address').value;
+      </div>
 
-            const payText = method + (method === 'Dinheiro' && changeVal ? ` (Troco R$ ${changeVal})` : '');
-            const newOrder = {
-                id: 'DS-' + Math.floor(1000 + Math.random() * 9000),
-                name, address, payment: payText, items: [...cart], total,
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            };
-            orders.unshift(newOrder);
-            localStorage.setItem('daiasalgados_orders', JSON.stringify(orders));
 
-            const itemsText = cart.map(i => `${i.qty}x ${i.name}`).join('\n');
-            const msg = `Olá, Daia Salgados! Novo pedido:\n\n${itemsText}\n\n*Total:* R$ ${total.toFixed(2).replace('.', ',')}\n*Pagamento:* ${payText}\n*Nome:* ${name}\n*Endereço:* ${address} (Orlândia/SP)`;
-            window.open(`https://wa.me/5516992251672?text=${encodeURIComponent(msg)}`, '_blank');
-            
-            cart = [];
-            renderCart();
-            document.getElementById('checkout-form').reset();
-            handlePaymentChange();
-        }
+      <!-- CATEGORIAS -->
+      <div
+        class="flex flex-wrap gap-2"
+        aria-label="Categorias"
+      >
 
-        function toggleAdminModal() {
-            const modal = document.getElementById('admin-modal');
-            modal.classList.toggle('hidden-section');
-        }
+        <button
+          data-category="todos"
+          class="category-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#E63946] text-white"
+        >
+          Todos
+        </button>
 
-        function authAdmin() {
-            if (document.getElementById('admin-pass-input').value === '1234') {
-                document.getElementById('admin-login-view').classList.add('hidden-section');
-                document.getElementById('admin-dashboard-view').classList.remove('hidden-section');
-                renderAdminData();
-                renderAdminProductsList();
-            } else alert('Senha incorreta! Use 1234');
-        }
+        <button
+          data-category="Fritos"
+          class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10"
+        >
+          Fritos por Porção
+        </button>
 
-        function logoutAdmin() {
-            document.getElementById('admin-dashboard-view').classList.add('hidden-section');
-            document.getElementById('admin-login-view').classList.remove('hidden-section');
-            document.getElementById('admin-pass-input').value = '';
-        }
+        <button
+          data-category="Kits"
+          class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10"
+        >
+          Kits Festa
+        </button>
 
-        function switchAdmTab(tab) {
-            const isAdd = tab === 'add';
-            document.getElementById('adm-tab-add').classList.toggle('hidden-section', !isAdd);
-            document.getElementById('adm-tab-pedidos').classList.toggle('hidden-section', isAdd);
-            document.getElementById('adm-tab-btn-add').className = isAdd ? 'px-3 py-1.5 rounded-lg gold-btn text-xs' : 'px-3 py-1.5 rounded-lg bg-white/5 text-[#A7A9BE] hover:text-white text-xs';
-            document.getElementById('adm-tab-btn-pedidos').className = !isAdd ? 'px-3 py-1.5 rounded-lg gold-btn text-xs' : 'px-3 py-1.5 rounded-lg bg-white/5 text-[#A7A9BE] hover:text-white text-xs';
-        }
+      </div>
 
-        function renderAdminData() {
-            orders = JSON.parse(localStorage.getItem('daiasalgados_orders') || '[]');
-            document.getElementById('adm-total-orders').innerText = orders.length;
-            document.getElementById('adm-count-badge').innerText = orders.length;
-            document.getElementById('adm-total-revenue').innerText = `R$ ${orders.reduce((acc, o) => acc + o.total, 0).toFixed(2).replace('.', ',')}`;
-            const list = document.getElementById('adm-orders-list');
-            list.innerHTML = orders.length === 0 ? '<p class="text-[#A7A9BE] text-center py-6">Nenhum pedido registrado.</p>' : orders.map(o => `
-                <div class="bg-white/5 border border-white/10 p-3 rounded-xl space-y-1">
-                    <div class="flex justify-between font-bold text-white">
-                        <span>${o.id} • ${o.name} <span class="text-[#A7A9BE] text-[10px] font-normal">(${o.time})</span></span>
-                        <span class="text-[#F4A261]">R$ ${o.total.toFixed(2).replace('.', ',')}</span>
-                    </div>
-                    <p class="text-[#A7A9BE] text-[11px]">Endereço: ${o.address} | Pagamento: ${o.payment}</p>
-                    <p class="font-mono text-white/80 text-[10px] bg-black/20 p-1.5 rounded-lg mt-1">${o.items.map(i => `${i.qty}x${i.name}`).join(' | ')}</p>
-                </div>
-            `).join('');
-        }
 
-        function renderAdminProductsList() {
-            const list = document.getElementById('adm-products-manage-list');
-            list.innerHTML = products.map(p => `
-                <div class="bg-white/5 border border-white/10 p-2 rounded-xl flex items-center justify-between text-xs">
-                    <div class="flex items-center gap-2">
-                        <img src="${p.image}" class="w-8 h-8 rounded-lg object-cover">
-                        <div class="truncate max-w-[150px]">
-                            <strong class="text-white block truncate">${p.name}</strong>
-                            <span class="text-[#A7A9BE] text-[10px]">R$ ${Number(p.price).toFixed(2)}</span>
-                        </div>
-                    </div>
-                    <button onclick="deleteProduct(${p.id})" class="text-red-400 hover:text-red-300 p-1"><i class="fa-solid fa-trash"></i></button>
-                </div>
-            `).join('');
-        }
+      <!-- LISTA DE PRODUTOS -->
+      <div
+        id="product-list"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        aria-live="polite"
+      ></div>
 
-        function addNewProduct(e) {
-            e.preventDefault();
-            const newP = {
-                id: Date.now(),
-                name: document.getElementById('new-prod-name').value,
-                price: parseFloat(document.getElementById('new-prod-price').value),
-                cat: document.getElementById('new-prod-cat').value,
-                image: tempBase64Image || 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=85',
-                desc: document.getElementById('new-prod-desc').value || 'Salgado artesanal frito na hora.'
-            };
-            products.push(newP);
-            saveProducts();
-            tempBase64Image = '';
-            document.getElementById('file-chosen-text').innerText = 'Nenhum arquivo escolhido';
-            e.target.reset();
-            alert('Salgado carregado e salvo com sucesso!');
-        }
+    </section>
 
-        function deleteProduct(id) {
-            if (confirm('Deseja remover este salgado do cardápio?')) {
-                products = products.filter(p => p.id !== id);
-                saveProducts();
-            }
-        }
 
-        function clearAllOrders() {
-            if (confirm('Deseja limpar todo o histórico de pedidos?')) {
-                orders = [];
-                localStorage.removeItem('daiasalgados_orders');
-                renderAdminData();
-            }
-        }
+    <!-- CARRINHO -->
+    <aside class="md:col-span-1">
 
-        document.getElementById('admin-modal').classList.add('hidden-section');
-        renderProducts();
+      <div
+        class="sticky top-24 bg-[#121118] border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
+      >
+
+        <!-- TÍTULO -->
+        <div class="p-5 border-b border-white/10">
+
+          <div class="flex justify-between items-center">
+
+            <div>
+
+              <p
+                class="text-[10px] uppercase tracking-widest text-[#A7A9BE] font-bold"
+              >
+                Seu carrinho
+              </p>
+
+              <h3 class="font-bold text-white mt-1">
+                Pedido
+
+                <span
+                  id="cart-item-count"
+                  class="text-[#FF85A1]"
+                >
+                  0 itens
+                </span>
+              </h3>
+
+            </div>
+
+            <i class="fa-solid fa-bag-shopping text-[#D4AF37]"></i>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITENS -->
+        <div
+          id="cart-items"
+          class="p-5 max-h-64 overflow-y-auto"
+        ></div>
+
+
+        <!-- TOTAL -->
+        <div class="px-5 pb-4">
+
+          <div
+            class="flex justify-between border-t border-white/10 pt-4"
+          >
+
+            <span class="text-xs text-[#A7A9BE]">
+              Total
+            </span>
+
+            <strong
+              id="cart-total"
+              class="text-[#F4A261]"
+            >
+              R$ 0,00
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORMULÁRIO -->
+        <form
+          id="checkout-form"
+          class="p-5 pt-0 space-y-3"
+        >
+
+          <input
+            id="cust-name"
+            required
+            maxlength="80"
+            autocomplete="name"
+            placeholder="Seu nome"
+            class="focus-ring w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60"
+          >
+
+          <input
+            id="cust-address"
+            required
+            maxlength="180"
+            autocomplete="street-address"
+            placeholder="Endereço para entrega"
+            class="focus-ring w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60"
+          >
+
+
+          <select
+            id="cust-payment"
+            class="focus-ring w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white"
+          >
+
+            <option value="Pix">
+              Pix
+            </option>
+
+            <option value="Cartão">
+              Cartão (Débito / Crédito)
+            </option>
+
+            <option value="Dinheiro">
+              Dinheiro
+            </option>
+
+          </select>
+
+
+          <!-- TROCO -->
+          <div
+            id="cash-info-box"
+            class="hidden"
+          >
+
+            <input
+              id="cust-change"
+              inputmode="decimal"
+              maxlength="12"
+              placeholder="Troco para quanto?"
+              class="focus-ring w-full bg-[#181622] border border-white/10 rounded-xl px-3.5 py-2.5 text-white placeholder-[#A7A9BE]/60"
+            >
+
+          </div>
+
+
+          <!-- BOTÃO -->
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-[#E63946] to-[#D62828] hover:opacity-95 text-white font-extrabold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            ENVIAR PEDIDO
+
+          </button>
+
+
+          <p
+            class="text-[10px] leading-relaxed text-[#A7A9BE]"
+          >
+            O pedido será preparado no seu navegador e enviado para o
+            WhatsApp da Daia Salgados. Não armazenamos seus dados em um
+            servidor nesta versão.
+          </p>
+
+        </form>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- RODAPÉ -->
+  <footer
+    class="border-t border-white/10 py-6 text-center text-xs text-[#A7A9BE]/70"
+  >
+
+    <p>
+      Daia Salgados • Orlândia/SP • Atendimento WhatsApp:
+      (16) 99225-1672
+    </p>
+
+    <p class="mt-2">
+
+      <a
+        href="#privacidade"
+        class="underline hover:text-white"
+      >
+        Privacidade
+      </a>
+
+      • Cardápio digital
+
+    </p>
+
+  </footer>
+
+
+  <!-- NOTIFICAÇÃO -->
+  <div
+    id="toast"
+    class="fixed bottom-5 left-1/2 -translate-x-1/2 hidden bg-[#F4A261] text-black font-bold text-xs px-4 py-3 rounded-xl shadow-2xl z-50"
+    role="status"
+  ></div>
+
+
+<script>
+
+'use strict';
+
+
+/*
+==========================================================
+DAIA SALGADOS - V2
+FRONTEND
+==========================================================
+
+IMPORTANTE:
+
+Esta versão NÃO possui painel administrativo.
+
+Isso é proposital.
+
+Não existe mais:
+
+- senha 1234
+- senha escondida no JavaScript
+- painel falso
+- produtos gravados no localStorage
+- pedidos gravados no localStorage
+
+Na FASE 2 vamos adicionar:
+
+Frontend
+    ↓
+Backend
+    ↓
+Banco de dados
+
+Assim teremos:
+
+- Login real
+- Administrador
+- Produtos
+- Pedidos
+- Estoque
+- Preços
+- Segurança
+==========================================================
+*/
+
+
+/* ========================================================
+   CONFIGURAÇÕES
+======================================================== */
+
+const WHATSAPP = '5516992251672';
+
+
+/* ========================================================
+   PRODUTOS
+======================================================== */
+
+const defaultProducts = Object.freeze([
+
+  {
+    id: 'p1',
+    name: 'Coxinhas Fresquinhas (Porção 10un)',
+    desc: 'Massa leve dourada crocante por fora e frango temperado.',
+    price: 20.00,
+    cat: 'Fritos',
+    image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=85'
+  },
+
+  {
+    id: 'p2',
+    name: 'Kibes Crocantes (Porção 10un)',
+    desc: 'Carne moída selecionada frita no ponto ideal de crocância.',
+    price: 20.00,
+    cat: 'Fritos',
+    image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=700&q=85'
+  },
+
+  {
+    id: 'p3',
+    name: 'Salsicha Empanada e Sortidos (Porção 10un)',
+    desc: 'Deliciosos espetinhos e salsichas empanadas artesanais.',
+    price: 18.00,
+    cat: 'Fritos',
+    image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=700&q=85'
+  },
+
+  {
+    id: 'p4',
+    name: 'Kit Festa 50 Salgados Sortidos',
+    desc: 'Bandeja sortida ideal para pequenos encontros e aniversários.',
+    price: 85.00,
+    cat: 'Kits',
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=85'
+  },
+
+  {
+    id: 'p5',
+    name: 'Kit Festa 100 Salgados Sortidos',
+    desc: 'Mix completo recém-frito com coxinhas, quibes e risoles da casa.',
+    price: 160.00,
+    cat: 'Kits',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=85'
+  }
+
+]);
+
+
+/* ========================================================
+   ESTADO DO CARRINHO
+======================================================== */
+
+let cart = [];
+
+let activeCategory = 'todos';
+
+
+/* ========================================================
+   FORMATAÇÃO DE DINHEIRO
+======================================================== */
+
+const money = value => {
+
+  return new Intl.NumberFormat(
+    'pt-BR',
+    {
+      style: 'currency',
+      currency: 'BRL'
+    }
+  ).format(value);
+
+};
+
+
+/* ========================================================
+   TOAST
+======================================================== */
+
+function showToast(message) {
+
+  const el = document.getElementById('toast');
+
+  el.textContent = message;
+
+  el.classList.remove('hidden');
+
+  clearTimeout(showToast.timer);
+
+  showToast.timer = setTimeout(() => {
+
+    el.classList.add('hidden');
+
+  }, 2600);
+
+}
+
+
+/* ========================================================
+   PRODUTOS
+======================================================== */
+
+function renderProducts() {
+
+  const container =
+    document.getElementById('product-list');
+
+  const products =
+    defaultProducts.filter(
+
+      p =>
+        activeCategory === 'todos' ||
+        p.cat === activeCategory
+
+    );
+
+
+  /*
+  Remove tudo antes de renderizar novamente.
+  */
+
+  container.replaceChildren();
+
+
+  products.forEach(p => {
+
+    const card =
+      document.createElement('article');
+
+    card.className =
+      'card-elegant rounded-2xl overflow-hidden flex flex-col justify-between';
+
+
+    /* IMAGEM */
+
+    const imageWrap =
+      document.createElement('div');
+
+    imageWrap.className =
+      'h-44 w-full overflow-hidden bg-[#181622] relative';
+
+
+    const img =
+      document.createElement('img');
+
+    img.src = p.image;
+
+    img.alt = p.name;
+
+    img.loading = 'lazy';
+
+    img.referrerPolicy = 'no-referrer';
+
+    img.className =
+      'w-full h-full object-cover';
+
+
+    imageWrap.appendChild(img);
+
+
+    /* CATEGORIA */
+
+    const badge =
+      document.createElement('span');
+
+    badge.className =
+      'absolute top-2.5 right-2.5 bg-black/70 text-[#FF85A1] text-[10px] px-2.5 py-1 rounded-full font-bold border border-white/15';
+
+    badge.textContent = p.cat;
+
+
+    imageWrap.appendChild(badge);
+
+
+    /* CORPO */
+
+    const body =
+      document.createElement('div');
+
+    body.className =
+      'p-4 space-y-1.5';
+
+
+    const title =
+      document.createElement('h4');
+
+    title.className =
+      'font-bold text-white text-xs leading-snug';
+
+    title.textContent =
+      p.name;
+
+
+    const desc =
+      document.createElement('p');
+
+    desc.className =
+      'text-[11px] text-[#A7A9BE] leading-relaxed';
+
+    desc.textContent =
+      p.desc;
+
+
+    body.append(
+      title,
+      desc
+    );
+
+
+    /* RODAPÉ DO PRODUTO */
+
+    const footer =
+      document.createElement('div');
+
+    footer.className =
+      'p-4 pt-0 flex items-center justify-between gap-3';
+
+
+    const price =
+      document.createElement('span');
+
+    price.className =
+      'text-[#F4A261] font-extrabold text-xs';
+
+    price.textContent =
+      money(p.price);
+
+
+    const button =
+      document.createElement('button');
+
+    button.type = 'button';
+
+    button.className =
+      'bg-white/10 hover:bg-[#E63946] text-white px-3 py-1.5 rounded-xl font-bold text-xs transition flex items-center gap-1.5 border border-white/10';
+
+
+    button.innerHTML =
+      '<i class="fa-solid fa-plus text-[10px]"></i> Adicionar';
+
+
+    button.addEventListener(
+      'click',
+      () => addToCart(p.id)
+    );
+
+
+    footer.append(
+      price,
+      button
+    );
+
+
+    card.append(
+      imageWrap,
+      body,
+      footer
+    );
+
+
+    container.appendChild(card);
+
+  });
+
+}
+
+
+/* ========================================================
+   ADICIONAR AO CARRINHO
+======================================================== */
+
+function addToCart(id) {
+
+  const product =
+    defaultProducts.find(
+      p => p.id === id
+    );
+
+
+  if (!product) return;
+
+
+  const existing =
+    cart.find(
+      item => item.id === id
+    );
+
+
+  if (existing) {
+
+    existing.qty += 1;
+
+  } else {
+
+    cart.push({
+
+      id: product.id,
+
+      name: product.name,
+
+      price: product.price,
+
+      qty: 1
+
+    });
+
+  }
+
+
+  renderCart();
+
+  showToast(
+    'Adicionado ao carrinho'
+  );
+
+}
+
+
+/* ========================================================
+   REMOVER
+======================================================== */
+
+function removeFromCart(id) {
+
+  cart =
+    cart.filter(
+      item => item.id !== id
+    );
+
+  renderCart();
+
+}
+
+
+/* ========================================================
+   RENDERIZAR CARRINHO
+======================================================== */
+
+function renderCart() {
+
+  const container =
+    document.getElementById('cart-items');
+
+
+  container.replaceChildren();
+
+
+  /* CARRINHO VAZIO */
+
+  if (!cart.length) {
+
+    const empty =
+      document.createElement('p');
+
+    empty.className =
+      'text-[#A7A9BE]/70 text-center py-8 text-xs';
+
+    empty.textContent =
+      'Nenhum salgado selecionado ainda';
+
+
+    container.appendChild(empty);
+
+  }
+
+
+  /* ITENS */
+
+  else {
+
+    cart.forEach(item => {
+
+      const row =
+        document.createElement('div');
+
+      row.className =
+        'flex justify-between items-center py-2 text-xs border-b border-white/5 gap-2';
+
+
+      const label =
+        document.createElement('span');
+
+      label.className =
+        'text-white';
+
+      label.textContent =
+        `${item.qty}x ${item.name}`;
+
+
+      const right =
+        document.createElement('div');
+
+      right.className =
+        'flex items-center gap-3 shrink-0';
+
+
+      const total =
+        document.createElement('span');
+
+      total.className =
+        'font-bold text-[#F4A261]';
+
+      total.textContent =
+        money(item.price * item.qty);
+
+
+      const remove =
+        document.createElement('button');
+
+      remove.type = 'button';
+
+      remove.className =
+        'text-red-400 hover:text-red-300';
+
+
+      remove.setAttribute(
+        'aria-label',
+        `Remover ${item.name}`
+      );
+
+
+      remove.innerHTML =
+        '<i class="fa-solid fa-trash-can text-xs"></i>';
+
+
+      remove.addEventListener(
+        'click',
+        () => removeFromCart(item.id)
+      );
+
+
+      right.append(
+        total,
+        remove
+      );
+
+
+      row.append(
+        label,
+        right
+      );
+
+
+      container.appendChild(row);
+
+    });
+
+  }
+
+
+  /* TOTAL */
+
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum + item.price * item.qty,
+      0
+    );
+
+
+  const count =
+    cart.reduce(
+      (sum, item) =>
+        sum + item.qty,
+      0
+    );
+
+
+  document.getElementById(
+    'cart-total'
+  ).textContent =
+    money(total);
+
+
+  document.getElementById(
+    'cart-item-count'
+  ).textContent =
+    `${count} ${count === 1 ? 'item' : 'itens'}`;
+
+}
+
+
+/* ========================================================
+   CATEGORIA
+======================================================== */
+
+function setCategory(category) {
+
+  activeCategory =
+    category;
+
+
+  document
+    .querySelectorAll('.category-btn')
+    .forEach(btn => {
+
+      const active =
+        btn.dataset.category === category;
+
+
+      btn.className = active
+
+        ? 'category-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#E63946] text-white'
+
+        : 'category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-[#A7A9BE] border border-white/10';
+
+    });
+
+
+  renderProducts();
+
+}
+
+
+/* ========================================================
+   PAGAMENTO
+======================================================== */
+
+function handlePaymentChange() {
+
+  const isCash =
+    document.getElementById(
+      'cust-payment'
+    ).value === 'Dinheiro';
+
+
+  document
+    .getElementById('cash-info-box')
+    .classList.toggle(
+      'hidden',
+      !isCash
+    );
+
+
+  document
+    .getElementById('cust-change')
+    .required =
+    isCash;
+
+}
+
+
+/* ========================================================
+   CRIAR PEDIDO
+======================================================== */
+
+function createOrderMessage() {
+
+  const name =
+    document
+      .getElementById('cust-name')
+      .value
+      .trim();
+
+
+  const address =
+    document
+      .getElementById('cust-address')
+      .value
+      .trim();
+
+
+  const method =
+    document
+      .getElementById('cust-payment')
+      .value;
+
+
+  const change =
+    document
+      .getElementById('cust-change')
+      .value
+      .trim();
+
+
+  /* VALIDAÇÃO */
+
+  if (!cart.length) {
+
+    throw new Error(
+      'Seu carrinho está vazio.'
+    );
+
+  }
+
+
+  if (!name || !address) {
+
+    throw new Error(
+      'Preencha nome e endereço.'
+    );
+
+  }
+
+
+  /* TOTAL */
+
+  const total =
+    cart.reduce(
+      (sum, item) =>
+        sum + item.price * item.qty,
+      0
+    );
+
+
+  /* PRODUTOS */
+
+  const items =
+    cart
+      .map(
+        item =>
+          `${item.qty}x ${item.name}`
+      )
+      .join('\n');
+
+
+  /* PAGAMENTO */
+
+  const payment =
+    method === 'Dinheiro' && change
+
+      ? `${method} (Troco para ${change})`
+
+      : method;
+
+
+  /*
+  ID DO PEDIDO
+
+  crypto.randomUUID()
+  é muito melhor que Math.random()
+  */
+
+  const orderCode =
+    `DS-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+
+
+  /* MENSAGEM */
+
+  return {
+
+    orderCode,
+
+    message:
+
+`Olá, Daia Salgados! Novo pedido ${orderCode}:
+
+${items}
+
+*Total:* ${money(total)}
+*Pagamento:* ${payment}
+*Nome:* ${name}
+*Endereço:* ${address} (Orlândia/SP)`
+
+  };
+
+}
+
+
+/* ========================================================
+   BOTÕES DE CATEGORIA
+======================================================== */
+
+document
+  .querySelectorAll('.category-btn')
+  .forEach(btn => {
+
+    btn.addEventListener(
+      'click',
+      () =>
+        setCategory(
+          btn.dataset.category
+        )
+    );
+
+  });
+
+
+/* ========================================================
+   ALTERAÇÃO DO PAGAMENTO
+======================================================== */
+
+document
+  .getElementById('cust-payment')
+  .addEventListener(
+    'change',
+    handlePaymentChange
+  );
+
+
+/* ========================================================
+   FINALIZAR PEDIDO
+======================================================== */
+
+document
+  .getElementById('checkout-form')
+  .addEventListener(
+    'submit',
+    event => {
+
+      event.preventDefault();
+
+
+      try {
+
+        const {
+          message
+        } =
+          createOrderMessage();
+
+
+        /*
+        encodeURIComponent
+        protege os dados dentro da URL.
+        */
+
+        const url =
+          `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+
+
+        /*
+        Abre o WhatsApp.
+        */
+
+        window.open(
+          url,
+          '_blank',
+          'noopener,noreferrer'
+        );
+
+
+        /*
+        Limpa carrinho.
+        */
+
+        cart = [];
+
         renderCart();
-        renderAdminData();
+
+
+        /*
+        Limpa formulário.
+        */
+
+        event.target.reset();
+
         handlePaymentChange();
-    </script>
+
+
+        showToast(
+          'Pedido preparado para o WhatsApp!'
+        );
+
+
+      }
+
+      catch (error) {
+
+        showToast(
+          error.message
+        );
+
+      }
+
+    }
+  );
+
+
+/* ========================================================
+   INICIALIZAÇÃO
+======================================================== */
+
+renderProducts();
+
+renderCart();
+
+handlePaymentChange();
+
+</script>
+
 </body>
 </html>
